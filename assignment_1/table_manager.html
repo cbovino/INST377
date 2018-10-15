@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <!-- CSS -->
@@ -10,7 +11,7 @@
 <!-- Data -->
 <script>
 
-// Don't copy this to any other places in this file. You can just use the "organizations" variable to do your assignment. 
+// Don't copy this to any other places in this file. You can just use the "organizations" variable to do your assignment.
 var organizations = [
 	 {
         "Region": "East Asia & Pacific",
@@ -19,7 +20,7 @@ var organizations = [
         "Organization Name": "200 Square",
         "Organization Type": "For-profit",
         "Sectors": "Housing, construction & real estate",
-        "Description": "200 Square is an online real estate agent in New Zealand.",        
+        "Description": "200 Square is an online real estate agent in New Zealand.",
         "City": "Wellington",
         "State/Region": "Wellington",
         "Founding Year": 2010,
@@ -34,7 +35,7 @@ var organizations = [
         "Organization Name": "21c Consultancy",
         "Organization Type": "For-profit",
         "Sectors": "IT and geospatial",
-        "Description": "21c is ICT innovation consultancy which advises international actors, institutions and governments around the world on technological trends which can affect the way they deliver services.",        
+        "Description": "21c is ICT innovation consultancy which advises international actors, institutions and governments around the world on technological trends which can affect the way they deliver services.",
         "City": "London",
         "State/Region": "",
         "Founding Year": 2015,
@@ -49,7 +50,7 @@ var organizations = [
         "Organization Name": "2GIS",
         "Organization Type": "For-profit",
         "Sectors": "IT and geospatial",
-        "Description": "2GIS is a city information service combined with a map. ",        
+        "Description": "2GIS is a city information service combined with a map. ",
         "City": "Novosibirsk",
         "State/Region": "Novosibirsk Oblast",
         "Founding Year": 1999,
@@ -64,7 +65,7 @@ var organizations = [
         "Organization Name": "2nd City Zoning",
         "Organization Type": "Nonprofit",
         "Sectors": "Housing, construction & real estate",
-        "Description": "An Open City App, 2nd City Zoning is an interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout the city.",        
+        "Description": "An Open City App, 2nd City Zoning is an interactive map that lets you find out how your building is zoned, learn where to locate your business and explore zoning patterns throughout the city.",
         "City": "Chicago",
         "State/Region": "Illinois",
         "Founding Year": 2013,
@@ -94,7 +95,7 @@ var organizations = [
         "Organization Name": "360 Yield Center",
         "Organization Type": "For-profit",
         "Sectors": "Agriculture",
-        "Description": "Taking a 360-degree view of key yield-limiting variables, 360 Yield Center develops strategies for better-performing crops and better on-farm profits.",        
+        "Description": "Taking a 360-degree view of key yield-limiting variables, 360 Yield Center develops strategies for better-performing crops and better on-farm profits.",
         "City": "Morton",
         "State/Region": "Illinois",
         "Founding Year": 2014,
@@ -124,7 +125,7 @@ var organizations = [
         "Organization Name": "3Tier (Europe) ",
         "Organization Type": "For-profit",
         "Sectors": "Energy and climate",
-        "Description": "3TIER is a global environmental and industrial measurement company providing weather-driven renewable energy risk assessment and forecasting for wind, solar, and hydro power projects.",        
+        "Description": "3TIER is a global environmental and industrial measurement company providing weather-driven renewable energy risk assessment and forecasting for wind, solar, and hydro power projects.",
         "City": "Helsinki",
         "State/Region": "Uusimaa",
         "Founding Year": 2012,
@@ -139,7 +140,7 @@ var organizations = [
         "Organization Name": "5PSolutions",
         "Organization Type": "For-profit",
         "Sectors": "IT and geospatial",
-        "Description": "5PSolutions are artisans of mobile platforms.",       
+        "Description": "5PSolutions are artisans of mobile platforms.",
         "City": "Fairfax",
         "State/Region": "Virginia",
         "Founding Year": 2007,
@@ -154,7 +155,7 @@ var organizations = [
         "Organization Name": "AAA National",
         "Organization Type": "Other",
         "Sectors": "Transportation and logistics",
-        "Description": "AAA provides services such as travel, automotive, insurance, financial, and discounts.",        
+        "Description": "AAA provides services such as travel, automotive, insurance, financial, and discounts.",
         "City": "Irving",
         "State/Region": "Texas",
         "Founding Year": 1902,
@@ -184,7 +185,7 @@ var organizations = [
         "Organization Name": "ABRELATAM",
         "Organization Type": "Nonprofit",
         "Sectors": "Governance",
-        "Description": "ABRELATAM is an conference that seeks to accelerate the process of opening information through Open Data transparency and promote the Latin America.",        
+        "Description": "ABRELATAM is an conference that seeks to accelerate the process of opening information through Open Data transparency and promote the Latin America.",
         "City": "Santiago",
         "State/Region": "",
         "Founding Year": 2015,
@@ -192,7 +193,7 @@ var organizations = [
         "Type of Data Used": "",
         "profileID": "1687"
     }
-	
+
 ];
 </script>
 
@@ -201,15 +202,93 @@ var organizations = [
 <body>
 <!-- Feel free to add empty tags. Data shouldn't be here. -->
 	<div id="org_table"></div>
+	<table id="myTable">
+  <tr>
+    <td id=r1c1>Row1 cell1</td>
+    <td id=r1c2>Row1 cell2</td>
+  </tr>
+  <tr>
+    <td id=r2c1>Row2 cell1</td>
+    <td id=r2c2>Row2 cell2</td>
+  </tr>
+  <tr>
+    <td id=r3c1>Row3 cell1</td>
+    <td id=r3c2>Row3 cell2</td>
+  </tr>
+	<tr>
+    <td id=r4c1>Row3 cell1</td>
+    <td id=r4c2>Row3 cell2</td>
+  </tr>
+	<tr>
+    <td id=r5c1>Row3 cell1</td>
+    <td id=r5c2>Row3 cell2</td>
+  </tr>
+</table>
 
 <script>
-// outputs the first item of the organizations array. Just for testing.
-console.log(organizations[0]); 
+// Question One
+questionOne = 0
+for (x in organizations){
+	var obj = organizations[x]
+	var nonprofit = obj["Organization Type"]
+	if (nonprofit == "Nonprofit"){
+			questionOne++
+	}
+}
+// Question Two
+lessThanTen = 0
+for (x in organizations){
+	var obj = organizations[x]
+	var foundy = obj["Founding Year"]
+	if (foundy > 2008){
+		lessThanTen++
+	}
+}
+// Question three
+northAmerica = 0
+for (x in organizations){
+	var obj = organizations[x]
+	var northa = obj["Region"]
+	if (northa == "North America"){
+		northAmerica++
+	}
+}
+// question four
+transport = 0
+for (x in organizations){
+	var obj = organizations[x]
+	var typeofT = obj["Type of Data Used"]
+	if (typeofT == "Transportation"){
+		transport++
+	}
+}
 
-// Your JavaScript code goes here
+// oldest founded organizations
+list_of_years=[]
+for (x in organizations){
+	var obj = organizations[x]
+	var foundy = obj["Founding Year"]
+	list_of_years.push(Number(foundy))
+}
+minyear = Math.min(...list_of_years)
+
+// lists of Questions answers
+listOfQuestions = ["Number of Nonprofits", "Number of Orgs less than 10yrs old",
+ "Number of Orgs in North America", "Orgs with Transportation Data", "Oldest Organization"]
+ListOfAnswers = [questionOne, lessThanTen, northAmerica, transport, minyear]
+// creates a function to generate the table
+document.getElementById("r1c1").innerHTML = listOfQuestions[0];
+document.getElementById("r1c2").innerHTML = ListOfAnswers[0];
+document.getElementById("r2c1").innerHTML = listOfQuestions[1];
+document.getElementById("r2c2").innerHTML = ListOfAnswers[1];
+document.getElementById("r3c1").innerHTML = listOfQuestions[2];
+document.getElementById("r3c2").innerHTML = ListOfAnswers[2];
+document.getElementById("r4c1").innerHTML = listOfQuestions[3];
+document.getElementById("r4c2").innerHTML = ListOfAnswers[3];
+document.getElementById("r5c1").innerHTML = listOfQuestions[4];
+document.getElementById("r5c2").innerHTML = ListOfAnswers[4];
 
 
 </script>
-
 </body>
 </html>
